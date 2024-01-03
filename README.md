@@ -16,7 +16,7 @@ Arguments are in the form of **premise** $\rightarrow$ **conclusion**.
 **Stance**: *in favour of*
 
 <center>
-    <img src="images/human_values.png" alt="human values", style="width: 400px; height: 600px;"/>
+    <img src="images/human_values.png" alt="human values", style="width: 400px; height: 400px;"/>
 </center>
 
 ## Corpus
