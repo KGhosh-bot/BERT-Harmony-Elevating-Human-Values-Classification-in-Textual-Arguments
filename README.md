@@ -16,7 +16,7 @@ Arguments are in the form of **premise** $\rightarrow$ **conclusion**.
 **Stance**: *in favour of*
 
 <center>
-    <img src="images/human_values.png" alt="human values" />
+    <img src="images/human_values.png" alt="human values", style="width: 400px; height: 300px;"/>
 </center>
 
 ## Corpus
@@ -43,6 +43,17 @@ To address a multi-label classification problem, I consider **level 3** categori
 * Self-enhancement
 * Conversation
 * Self-transcendence
+
+### Models
+
+* **Baseline**: implement a random uniform classifier (an individual classifier per category).
+* **Baseline**: implement a majority classifier (an individual classifier per category).
+
+<br/>
+
+* **BERT w/ C**: define a BERT-based classifier that receives an argument **conclusion** as input.
+* **BERT w/ CP**: add argument **premise** as an additional input.
+* **BERT w/ CPS**: add argument premise-to-conclusion **stance** as an additional input.
 
 ## Flow of the notebook
 The notebook will be divided into seperate sections to provide a organized walk through the process used. The sections are:
