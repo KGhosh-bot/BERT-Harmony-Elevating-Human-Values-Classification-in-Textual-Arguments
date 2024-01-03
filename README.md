@@ -63,7 +63,7 @@ I utilized Hugging Face [**AutoModelForSequenceClassification**](https://hugging
 * While the classification results across various variants did not exhibit substantial differences, but observed improved scores when classifying *'Premise' and 'Conclusion'* arguments compared to using only *'Premise'* as input. Also suggesting that the inclusion of *'Stance'* (S) does not significantly impact performance in this context.
 * The rsults on test set are in Table 1.
 <p align="center">
-    <img src="images/metrics.jpeg", style="width: 400px; height: 400px;"/></center>
+    <img src="images/metrics.png"/></center>
 </p>
 
 ## Flow of the notebook
