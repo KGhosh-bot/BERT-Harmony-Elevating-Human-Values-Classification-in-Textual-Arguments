@@ -41,11 +41,15 @@ To address a multi-label classification problem, I consider **level 3** categori
 ### Introduction
 
 The original paper (https://downloads.webis.de/publications/papers/kiesel_2022b.pdf) studies the human values behind natural language arguments. The authors introduced a comprehensive taxonomy comprising 54 values and curated a  dataset of 5270 arguments from four geographical cultures, manually annotated for human values. They compared three approaches, BERT, SVM, and 1-Baseline with training/testing on 'Premise' arguments for category wise classification.
-In line with their work, considering only level 3 value categories and compared the classification over three models, Baselines: **Uniform** , **Majority** classifier and **BERT**. Extending their approach by adding three different variants of BERT:\\
+In line with their work, considering only level 3 value categories and compared the classification over three models, Baselines: **Uniform** , **Majority** classifier and **BERT**. Extending their approach by adding three different variants of BERT:
+
 **BERT w/ C**: a BERT-based classifier that receives an argument conclusion as input.\\
+
 **BERT w/ CP**: adding argument premise as an additional input.\\
+
 **BERT w/ CPS**: adding argument premise-to-conclusion stance as an additional input.
-I fine-tuned multi-label roberta-large with batch size 16, learning rate \(2^{-5}\) (5 epochs) and weight decay 0.01.\\
+
+I fine-tuned multi-label roberta-large with batch size 16, learning rate \(2^{-5}\) (5 epochs) and weight decay 0.01.
 The trained BERT model was saved in the specified model directory and used ’macro-average F1-score’ for selecting the best model
 
 ### Analysis
