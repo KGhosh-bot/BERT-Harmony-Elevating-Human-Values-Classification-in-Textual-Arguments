@@ -40,7 +40,7 @@ To address a multi-label classification problem, I consider **level 3** categori
 
 ### Introduction
 
-The original paper (https://downloads.webis.de/publications/papers/kiesel_2022b.pdf) studies the human values behind natural language arguments. The authors introduced a comprehensive taxonomy comprising 54 values and curated a  dataset of 5270 arguments from four geographical cultures, manually annotated for human values. They compared three approaches, BERT, SVM, and 1-Baseline with training/testing on 'Premise' arguments for category wise classification.
+[The original paper](https://downloads.webis.de/publications/papers/kiesel_2022b.pdf) studies the human values behind natural language arguments. The authors introduced a comprehensive taxonomy comprising 54 values and curated a  dataset of 5270 arguments from four geographical cultures, manually annotated for human values. They compared three approaches, BERT, SVM, and 1-Baseline with training/testing on 'Premise' arguments for category wise classification.
 In line with their work, I consider only level 3 value categories and compared the classification over three models, Baselines: **Uniform** , **Majority** classifier and **BERT**. Extending their approach by adding three different variants of BERT:
 
 **BERT w/ C**: a BERT-based classifier that receives an argument conclusion as input.
