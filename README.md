@@ -49,7 +49,7 @@ In line with their work, I consider only level 3 value categories and compared t
 
 **BERT w/ CPS**: adding argument premise-to-conclusion stance as an additional input.
 
-I fine-tuned multi-label roberta-large with batch size 16, learning rate \(2^{-5}\) (5 epochs) and weight decay 0.01.
+I fine-tuned multi-label roberta-large with batch size 16, learning rate $2^{-5}\$ (5 epochs) and weight decay 0.01.
 The trained BERT model was saved in the specified model directory and used ’macro-average F1-score’ for selecting the best model
 
 ### Analysis
