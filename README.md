@@ -19,7 +19,7 @@ Arguments are in the form of **premise** $\rightarrow$ **conclusion**.
     <img src="images/human_values.png" alt="human values" />
 </center>
 
-# Corpus
+## Corpus
 
 The official page of the challenge [here](https://touche.webis.de/semeval23/touche23-web/) offers several corpora for evaluation and testing.
 
@@ -44,7 +44,7 @@ To address a multi-label classification problem, I consider **level 3** categori
 * Conversation
 * Self-transcendence
 
-#### Flow of the notebook
+## Flow of the notebook
 The notebook will be divided into seperate sections to provide a organized walk through the process used. The sections are:
 
 1. Importing Python Libraries and preparing the environment
