@@ -46,14 +46,14 @@ To address a multi-label classification problem, I consider **level 3** categori
 
 ### Models
 
-* **Baseline**: implement a random uniform classifier (an individual classifier per category).
-* **Baseline**: implement a majority classifier (an individual classifier per category).
+* **Baseline**: a random uniform classifier (an individual classifier per category).
+* **Baseline**: a majority classifier (an individual classifier per category).
 
 <br/>
 
-* **BERT w/ C**: define a BERT-based classifier that receives an argument **conclusion** as input.
-* **BERT w/ CP**: add argument **premise** as an additional input.
-* **BERT w/ CPS**: add argument premise-to-conclusion **stance** as an additional input.
+* **BERT w/ C**: a BERT-based classifier that receives an argument **conclusion** as input.
+* **BERT w/ CP**: added argument **premise** as an additional input.
+* **BERT w/ CPS**: added argument premise-to-conclusion **stance** as an additional input.
 
 ## Flow of the notebook
 The notebook will be divided into seperate sections to provide a organized walk through the process used. The sections are:
