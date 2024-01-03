@@ -38,7 +38,7 @@ To address a multi-label classification problem, I consider **level 3** categori
 * Conversation
 * Self-transcendence
 
-### 1. Introduction
+## Introduction
 
 [The original paper](https://downloads.webis.de/publications/papers/kiesel_2022b.pdf) studies the human values behind natural language arguments. The authors introduced a comprehensive taxonomy comprising 54 values and curated a  dataset of 5270 arguments from four geographical cultures, manually annotated for human values. They compared three approaches, BERT, SVM, and 1-Baseline with training/testing on 'Premise' arguments for category wise classification.
 In line with their work, I consider only level 3 value categories and compared the classification over three models, Baselines: **Uniform** , **Majority** classifier and **BERT**. Extending their approach by adding three different variants of BERT:
@@ -49,19 +49,22 @@ In line with their work, I consider only level 3 value categories and compared t
 
 **BERT w/ CPS**: adding argument premise-to-conclusion stance as an additional input.
 
-I fine-tuned multi-label roberta-large with batch size 16, learning rate $2^{-5}\$ (5 epochs) and weight decay 0.01.
-The trained BERT model was saved in the specified model directory and used ’macro-average F1-score’ for selecting the best model
 
-### 2. Experimental setup and results
+## Experimental setup and results
 * **Baseline**
   
 The baseline model is trained for each category independently utilizing scikit-learn's **DummyClassifier** with for **random and majority** classification. It is used with default settings with three different random state (seed) to control the randomness. Trained models were saved in the specified model directory for use during prediction.
 * **BERT**
   
 I utilized Hugging Face [**AutoModelForSequenceClassification**](https://huggingface.co/docs/transformers/model_doc/auto#transformers.AutoModelForSequenceClassification) with pre-trained *'roberta-large'*, with a custom **MultiLabelTrainer** class extending the Trainer class from the transformers library. It overrides the compute-loss method for custom loss computation using a combination of Binary Cross Entropy which is implemented as **BCEWithLogitsLoss** in PyTorch. We fine-tuned the model with *batch size 16, learning rate* $2^{-5}$ *(5 epochs) and weight decay 0.01*. BERT input data was tokenized using the *AutoTokenizer* from HuggingFace. The trained BERT model was saved in the specified model directory and used *'macro-average F1-score'* for selecting the best model. 
-### Analysis
+
+## Analysis
 * The experimentation primarily succeeded in enhancing the test macro average F1-score from **0.71 to 0.77** for level 3 categories.
 * While the classification results across various variants did not exhibit substantial differences, but observed improved scores when classifying *'Premise' and 'Conclusion'* arguments compared to using only *'Premise'* as input. Also suggesting that the inclusion of *'Stance'* (S) does not significantly impact performance in this context.
+* The rsults on test set are in Table 1.
+<p align="center">
+    <img src="images/metrics.png", style="width: 400px; height: 400px;"/></center>
+</p>
 
 ## Flow of the notebook
 The notebook will be divided into seperate sections to provide a organized walk through the process used. The sections are:
