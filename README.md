@@ -25,15 +25,9 @@ The official page of the challenge [here](https://touche.webis.de/semeval23/touc
 
 I worked with the standard training, validation, and test splits.
 
-#### Arguments
-* arguments-training.tsv
-* arguments-validation.tsv
-* arguments-test.tsv
+**Arguments** : * arguments-training.tsv * arguments-validation.tsv * arguments-test.tsv
 
-#### Human values
-* labels-training.tsv
-* labels-validation.tsv
-* labels-test.tsv
+**Human values** : * labels-training.tsv * labels-validation.tsv * labels-test.tsv
 
 ### Annotations
 
@@ -44,16 +38,19 @@ To address a multi-label classification problem, I consider **level 3** categori
 * Conversation
 * Self-transcendence
 
-### Models
+### Introduction
 
-* **Baseline**: a random uniform classifier (an individual classifier per category).
-* **Baseline**: a majority classifier (an individual classifier per category).
+The original paper (https://downloads.webis.de/publications/papers/kiesel_2022b.pdf) studies the human values behind natural language arguments. The authors introduced a comprehensive taxonomy comprising 54 values and curated a  dataset of 5270 arguments from four geographical cultures, manually annotated for human values. They compared three approaches, BERT, SVM, and 1-Baseline with training/testing on 'Premise' arguments for category wise classification.
+In line with their work, considering only level 3 value categories and compared the classification over three models, Baselines: **Uniform** , **Majority** classifier and **BERT**. Extending their approach by adding three different variants of BERT:\\
+**BERT w/ C**: a BERT-based classifier that receives an argument conclusion as input.\\
+**BERT w/ CP**: adding argument premise as an additional input.\\
+**BERT w/ CPS**: adding argument premise-to-conclusion stance as an additional input.
+I fine-tuned multi-label roberta-large with batch size 16, learning rate \(2^{-5}\) (5 epochs) and weight decay 0.01.\\
+The trained BERT model was saved in the specified model directory and used ’macro-average F1-score’ for selecting the best model
 
-<br/>
-
-* **BERT w/ C**: a BERT-based classifier that receives an argument **conclusion** as input.
-* **BERT w/ CP**: added argument **premise** as an additional input.
-* **BERT w/ CPS**: added argument premise-to-conclusion **stance** as an additional input.
+### Analysis
+* The experimentation primarily succeeded in enhancing the test macro average F1-score from 0.71 to 0.77 for level 3 categories.
+* While the classification results across various variants did not exhibit substantial differences, but observed improved scores when classifying 'Premise' and 'Conclusion' arguments compared to using only 'Premise' as input. Also suggesting that the inclusion of Stance (S) does not significantly impact performance in this context.
 
 ## Flow of the notebook
 The notebook will be divided into seperate sections to provide a organized walk through the process used. The sections are:
