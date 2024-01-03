@@ -1,4 +1,4 @@
-# Human_Value_Detection
+# Human Value Detection
 This project addresses the Human Value Detection Challenge, where the objective is to classify, given a textual argument and a human value category, classify whether or not the argument draws on that category. 
 Human values behind natural language arguments, such as to have ’freedom of thought’ or to be ’broad-minded’ are commonly accepted answers and logic to why something is desirable in the ethical sense and are thus essential both in real world argumentation and theoretical argumentation frameworks. Our goal is to perform automatic multi label classification using several neural models considering solely level 3 value categories. Through our experimentation, we achieved a maximum F1-score of 0.88 and an average of 0.77.
 
